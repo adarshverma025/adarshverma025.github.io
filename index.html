@@ -26,35 +26,38 @@
 	<link href='https://fonts.googleapis.com/css?family=Signika|Poppins:300,400,600,700|Dancing+Script:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet/less" href="cake.less">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+	<style>
+		.loading { display: none !important; visibility: hidden !important; }
+		.container { display: block !important; }
+	</style>
 </head>
 
 <body>
 	<div class="loading"></div>
+	<canvas id="backgroundFireworks"></canvas>
 	<canvas id="confetti"></canvas>
-	<audio class="song" controls loop>
-        <source src="hbd.mp3"></source>
+	<canvas id="fireworks"></canvas>
+	<audio class="song" controls loop preload="none">
+        <source src="hbd.mp3" type="audio/mpeg"></source>
 	   Your browser isn't invited for super fun audio time.
     </audio>
     <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
+    	<h2 style="color:#F2B300;">A</h2>
     </div>
     <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
+    	<h2 style="color:#0719D4;">N</h2>
     </div>
 	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">D</h2>
+    	<h2 style="color:#D14D39;">K</h2>
     </div>
 	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">X</h2>
+    	<h2 style="color:#8FAD00;">I</h2>
     </div>
 	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">O</h2>
+    	<h2 style="color:#8377E4;">T</h2>
     </div>
     <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">L</h2>
-    </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 style="color:#20CFB4;">A</h2>
+    	<h2 style="color:#FF69B4;">A</h2>
     </div>
 
     <img src="Balloon-Border.png" width="100%" class="balloon-border">
@@ -84,7 +87,10 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<img src="banner.png" class="bannar">
+				<div class="bannar">
+					<h1 class="banner-text">🎉 Happy Birthday 🎉</h1>
+					<p class="banner-subtitle">Wishing You a Magical Day!</p>
+				</div>
 			</div>
 		</div>
 		<div class="row cake-cover">
