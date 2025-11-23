@@ -1,19 +1,30 @@
 body {
-	/*background-color: #FFDAB9;	*/
-	background-color: #000;
-	-webkit-transition:background-color linear 5s;
-	-moz-transition:background-color linear 5s;
-	-o-transition:background-color linear 5s;
-	-ms-transition:background-color linear 5s;
-	transition:background-color linear 5s;
-	overflow-x:hidden;
+	background: #0a0a0a;
+	background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
+	-webkit-transition: background 5s ease;
+	-moz-transition: background 5s ease;
+	-o-transition: background 5s ease;
+	-ms-transition: background 5s ease;
+	transition: background 5s ease;
+	overflow-x: hidden;
+	font-family: 'Poppins', sans-serif;
+	position: relative;
+}
+
+#confetti {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 10;
 }
 .container {
 	display: none;
 }
 .peach {
-	background-color: #FFDAB9;
-	
+	background: linear-gradient(135deg, #FFD700 0%, #FFDAB9 50%, #FFE4B5 100%) !important;
 }
 .peach-after {
 	-webkit-animation:peach_alive linear 8s infinite;
@@ -1078,20 +1089,22 @@ audio {
 .balloons {
 	position: fixed;
 	bottom: -200px;
-	opacity: 0.6;
+	opacity: 0.85;
 	z-index: 99;
 	width: 100px;
 	height: 183px;
 	background-repeat: no-repeat no-repeat;
 	background-size: 100px 183px;
+	filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 .balloons h2 {
 	text-transform: uppercase;
-	font-family: 'Signika', sans-serif;
+	font-family: 'Dancing Script', 'Signika', sans-serif;
 	font-size: 50px;
-	color: #BF4136;
-	text-shadow: 5px 5px 5px #FFF;
+	color: #FFF;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(240, 147, 251, 0.5);
 	display: none;
+	font-weight: 700;
 }
 #b1,#b11 {
 	background-image: url('b1.png');
@@ -1270,15 +1283,30 @@ audio {
 .message {
 	margin-top: 200px;
 	display: none;
+	text-align: center;
+	padding: 40px 20px;
 }
 .message p {
-	font-family: 'Signika', sans-serif;
-	font-size: 30px;
-	text-transform: uppercase;
-	color: #C4515C;
-	text-shadow: 2px 2px 2px #FFF;
+	font-family: 'Dancing Script', 'Poppins', sans-serif;
+	font-size: 24px;
+	color: #fff;
+	text-shadow: 0 2px 10px rgba(240, 147, 251, 0.3);
 	display: none;
-	font-weight: bold;
+	font-weight: 600;
+	line-height: 1.8;
+	margin: 15px 0;
+	animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .btn-primary {
@@ -1298,13 +1326,139 @@ audio {
         border-color: #fff;
         color: #fff;
         background-color: #466baf;
+}
+
+/* Enhanced Button Styling */
+.btn-custom {
+	border: none;
+	padding: 12px 20px;
+	text-transform: uppercase;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: #fff;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 50px;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+	font-size: 13px;
+	letter-spacing: 0.5px;
+}
+
+.btn-custom:hover {
+	background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+	box-shadow: 0 8px 25px rgba(240, 147, 251, 0.6);
+	transform: translateY(-3px);
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-custom:active {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+}
+
+.button-row {
+	padding: 10px 0;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(10px);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-fixed-bottom {
+	bottom: 0;
+	width: 100%;
+}
+        background-color: #466baf;
     }
 
 
 
     /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
-    	}
-    }*/
+/* Glow Effects */
+@keyframes glow {
+	0%, 100% {
+		text-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
+	}
+	50% {
+		text-shadow: 0 0 20px rgba(240, 147, 251, 0.8), 0 0 30px rgba(102, 126, 234, 0.6);
+	}
+}
+
+/* Pulse animation */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.btn-custom:focus {
+	outline: none;
+	box-shadow: 0 0 20px rgba(240, 147, 251, 0.8);
+}
+
+/* Loading animation enhanced */
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Container improvements */
+.container {
+	animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Responsive improvements */
+@media only screen and (max-width: 768px) {
+	.btn-custom {
+		padding: 10px 15px;
+		font-size: 12px;
+		margin: 3px;
+	}
+	
+	.message p {
+		font-size: 18px;
+	}
+	
+	.balloons {
+		width: 70px;
+		height: 128px;
+		background-size: 70px 128px;
+	}
+	
+	.balloons h2 {
+		font-size: 35px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.btn-custom {
+		padding: 8px 12px;
+		font-size: 11px;
+		margin: 2px;
+	}
+	
+	.message p {
+		font-size: 16px;
+	}
+}

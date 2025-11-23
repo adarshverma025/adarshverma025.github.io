@@ -23,14 +23,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="loading.css">
-	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Signika|Poppins:300,400,600,700|Dancing+Script:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet/less" href="cake.less">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
 
 <body>
 	<div class="loading"></div>
+	<canvas id="confetti"></canvas>
 	<audio class="song" controls loop>
         <source src="hbd.mp3"></source>
 	   Your browser isn't invited for super fun audio time.
@@ -129,29 +129,18 @@
 			</div>
 		</div>
 		<div class="navbar navbar-fixed-bottom">
-			<div class="row">
-				<div class="col-md-6 text-center col-md-offset-3">
-					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
-					<button class="btn btn-primary" id="play">Play Music</button>
-					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
-					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
-					<button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
-					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
-					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
-					<button class="btn btn-primary" id="story">A mesage for you</button>
-					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+			<div class="row button-row">
+				<div class="col-md-12 text-center">
+					<button class="btn btn-custom" id="turn_on">✨ Turn On Lights</button>
+					<button class="btn btn-custom" id="play">🎵 Play Music</button>
+					<button class="btn btn-custom" id="bannar_coming">🎀 Let's Decorate</button>
+					<button class="btn btn-custom" id="balloons_flying">🎈 Fly With Balloons</button>
+					<button class="btn btn-custom" id="cake_fadein">🎂 Most Delicious Cake</button>
+					<button class="btn btn-custom" id="light_candle">🕯️ Light Candle</button>
+					<button class="btn btn-custom" id="wish_message">🎉 Happy Birthday</button>
+					<button class="btn btn-custom" id="story">💌 A Message For You</button>
 				</div>
 			</div>
-			<!-- <div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div> -->
 		</div>
 
 
