@@ -1456,7 +1456,7 @@ audio {
 	height: 2px;
 	background: linear-gradient(90deg, transparent, #FF1493, transparent);
 	top: 50%;
-	animation: expandLine 1.5s ease-in-out infinite;
+	animation: expandLine 2s ease-in-out infinite;
 }
 
 .message::before {
@@ -1489,7 +1489,7 @@ audio {
 	font-weight: 700;
 	line-height: 1.8;
 	margin: 15px 0;
-	animation: fadeInUp 1s ease-out;
+	animation: fadeInUp 3s ease-out;
 	position: relative;
 	z-index: 1;
 }

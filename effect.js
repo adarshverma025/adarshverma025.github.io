@@ -541,7 +541,7 @@ function setupEventHandlers() {
 				return;
 			}
 			
-			$("p:nth-child("+i+")").fadeIn('slow').delay(2000).promise().done(function(){
+			$("p:nth-child("+i+")").fadeIn('slow').delay(3500).promise().done(function(){
 				$("p:nth-child("+i+")").fadeOut('slow');
 				if (i % 5 === 0 && confetti) {
 					confetti.createParticles(window.innerWidth * Math.random(), window.innerHeight * 0.3, 15);
