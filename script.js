@@ -3,6 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
+const ourSong = document.getElementById("ourSong");
 
 const moveNoButton = () => {
   const offset = 24;
@@ -30,6 +31,9 @@ noBtn.addEventListener("touchstart", moveNoButton, { passive: true });
 yesBtn.addEventListener("click", () => {
   yesBtn.textContent = "Yay! Baby, I love you";
   yesBtn.classList.add("btn--yes-active");
+  if (ourSong) {
+    ourSong.play().catch(() => {});
+  }
 });
 
 window.addEventListener("resize", () => {
