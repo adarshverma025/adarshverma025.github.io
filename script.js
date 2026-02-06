@@ -1,5 +1,8 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
 
 const moveNoButton = () => {
   const offset = 24;
@@ -25,7 +28,7 @@ noBtn.addEventListener("click", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton, { passive: true });
 
 yesBtn.addEventListener("click", () => {
-  yesBtn.textContent = "Yay! Ankita, I love you";
+  yesBtn.textContent = "Yay! Baby, I love you";
   yesBtn.classList.add("btn--yes-active");
 });
 
@@ -33,4 +36,32 @@ window.addEventListener("resize", () => {
   noBtn.style.position = "";
   noBtn.style.left = "";
   noBtn.style.top = "";
+});
+
+document.querySelectorAll(".timeline-photo").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add("lightbox--open");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
+});
+
+const closeLightbox = () => {
+  lightbox.classList.remove("lightbox--open");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImage.src = "";
+};
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
 });
